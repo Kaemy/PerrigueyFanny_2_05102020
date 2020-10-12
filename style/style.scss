@@ -5,6 +5,8 @@
 /* L		- POLICES & COLOR - */
 /* L		- ELEMENTS PRINCIPAUX - */
 /* L		- HEADER - */
+/* L        - MAIN - */
+/* L            -- SEARCH - */
 /* L		- FOOTER - */
 /* L		- MEDIA QUERIES - */
 
@@ -81,6 +83,155 @@ a {
         font-weight: 600;
     }
 }
+
+/* ---------------------------------------- */
+/* ==       MAIN           */
+/*---------------------------------------- */
+
+.main {
+    max-width: $containerMaxWidth;
+    margin: auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/*---------------------------------------- */
+/* === SEARCH */
+/*---------------------------------------- */
+
+.search {
+    &Header {
+        &Title {
+            margin-bottom: 0.5rem;
+        }
+        &Subtitle {
+            margin-top: 0;
+        }
+    }
+    &Form {
+        display: inline-flex;
+        max-width: 100%;
+        overflow: auto;
+
+        &Wrapicon {
+            background-color: $grey;
+            padding: 1rem 1.25rem;
+            border-radius: 1rem 0 0 1rem;
+            text-align: center;
+
+            &Icon {
+                margin-left: .1rem;
+            }
+        }
+        &Searchinput {
+            border-right: none;
+            border-left: none;
+            border-top: $grey 1px solid;
+            border-bottom: $grey 1px solid;
+            padding: 0 1.5rem;
+            box-sizing: border-box;
+            width: 14rem;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: "Raleway", "Sans serif";
+
+            &::placeholder {
+                font-family: "Raleway", "Sans serif";
+                font-size: 1rem;
+                color: #00000069;
+            }
+        }
+        &Submitinput {
+            background-color: $blue;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 0 1rem 1rem 0;
+            padding: 0 1.5rem;
+            font-family: "Raleway", "Sans serif";
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    }
+    &Filters {
+        display: flex;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+
+        &Title {
+            margin: 0 2rem 1rem 0;
+            display: flex;
+            align-items: center;
+        }
+        &Filter {
+            display: flex;
+            align-items: center;
+            margin-right: 2rem;
+            border: 2px solid $darkGrey;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition-duration: .1s;
+            font-weight: bold;
+            
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                background-color: #f3f8ff;
+                transform: scale(1.015);
+            }
+            &Wrapicon {
+                background-color: $lightBlue;
+                border-radius: 100%;
+                height: 3rem;
+                width: 3rem;
+                min-height: 3.5rem;
+                min-width: 3.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: -2px;
+                
+                &Icon {
+                    color: blue;
+                }
+            }
+            &Title {
+                margin: 0 1rem;
+            }
+        }
+    }
+
+    &Result {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0 2rem 0;
+
+        &Wrapicon {
+            height: 2rem;
+            width: 2rem;
+            min-height: 2rem;
+            min-width: 2rem;
+            border: solid 1px $darkGrey;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+
+            &Icon {
+                color: $blue;
+            }
+        }
+
+        &Text {
+            margin: 0;
+        }
+    }
+}
+
+
 /* ---------------------------------------- */
 /* ==       FOOTER           */
 /*---------------------------------------- */
@@ -131,6 +282,43 @@ a {
                 }
                 &:hover {
                     border-bottom-color: $blue;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( max-width: 600px ) { // Phone
+    .search {
+        &Form {
+            display: flex;
+            width: 100%;
+            
+            &Searchinput {
+                flex: 1;
+                width: undefined;
+            }
+            &Submitinput {
+                &Text {
+                    display: none;
+                }
+                &Icon {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( min-width: 601px ) { // Desktop
+    .search {
+        &Form {
+            &Submitinput {
+                &Text {
+                    display: block;
+                }
+                &Icon {
+                    display: none!important;
                 }
             }
         }
