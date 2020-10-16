@@ -296,7 +296,7 @@ a {
                 margin: .25rem .75rem .25rem .75rem;
                     
                 &Price {
-                    font-weight: bols;
+                    font-weight: bold;
                 }
             }
 
@@ -500,7 +500,6 @@ a {
             
             &Searchinput {
                 flex: 1;
-                width: undefined;
             }
             &Submitinput {
                 &Text {
