@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ---------------------------------------- */
 /* ==            SUMMARY              */
 /*---------------------------------------- */
@@ -131,6 +132,7 @@ a {
   display: flex;
   margin-top: 2rem;
   flex-wrap: wrap;
+  /* autorise le retour à la ligne */
 }
 .searchFiltersTitle {
   margin: 0 2rem 1rem 0;
@@ -212,6 +214,7 @@ a {
   grid-template-columns: 6fr 3fr;
 }
 .hostingMain {
+  /* hérite le style */
   display: grid;
   column-gap: 2rem;
   row-gap: 2rem;
@@ -241,6 +244,7 @@ a {
 .hostingMainCardFigureImg {
   height: 7rem;
   object-fit: cover;
+  /* remplit la box en maintenant le ratio */
   max-width: 100%;
   width: 100%;
   max-height: 100%;
@@ -375,6 +379,7 @@ a {
 /* ---------------------------------------- */
 /* ==       MEDIA QUERIES           */
 /*---------------------------------------- */
+/*        MEDIA-HEADER           */
 @media screen and (min-width: 601px) {
   .header {
     grid-template-columns: auto 1fr auto auto;
@@ -413,6 +418,7 @@ a {
     border-bottom-color: #0065FC;
   }
 }
+/*        MEDIA-SEARCH           */
 @media screen and (max-width: 600px) {
   .searchForm {
     display: flex;
@@ -437,6 +443,7 @@ a {
     display: none !important;
   }
 }
+/*        MEDIA-HEBERGEMENT           */
 @media (max-width: 1280px) {
   .hosting {
     grid-template-columns: 1fr;
@@ -473,6 +480,7 @@ a {
     grid-template-rows: auto repeat(3, 9rem);
   }
 }
+/*        MEDIA-ACTIVITE           */
 @media (min-width: 1100px) {
   .activity {
     grid-template-columns: repeat(4, 1fr);
@@ -524,6 +532,7 @@ a {
     grid-template-rows: auto 12rem 12rem 12rem 12rem 12rem 12rem;
   }
 }
+/*        MEDIA-FOOTER           */
 @media (max-width: 750px) {
   .footerColumnwrapper {
     flex-direction: column;
